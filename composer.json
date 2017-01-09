@@ -1,0 +1,40 @@
+{
+    "name": "gummmibear/zend-expressive-config",
+    "description": "Zend Expressive config manager",
+    "keywords": [
+        "zend",
+        "expressive",
+        "config"
+    ],
+    "homepage": "https://github.com/gummmibear/zend-expressive-config",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dawid Jurga",
+            "email": "dawidjurga@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gummmibear/zend-expressive-config/issues",
+        "source": "https://github.com/gummmibear/zend-expressive-config"
+    },
+    "require": {
+        "php": ">=5.4",
+        "symfony/yaml": "~2.8.0 || ~3.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "mikey179/vfsStream": "~1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zend\\Expressive\\Config\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zend\\Expressive\\Config\\Test\\": "test"
+        }
+    }
+}
