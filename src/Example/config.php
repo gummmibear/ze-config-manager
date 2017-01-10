@@ -12,13 +12,10 @@ $configFileProviderManager = new ConfigFileProviderManager($configFileProviderFa
 $routingFileProviderFactory = new ConfigFileProviderFactory(__DIR__ . '/routing/');
 $routingFileProviderManager = new ConfigFileProviderManager($routingFileProviderFactory);
 
-$configProviders = $configFileProviderManager->createDefaultProviders();
-$routingProviders = $routingFileProviderManager->createDefaultProviders();
-
-$providers = array_merge($configProviders, $routingProviders);
 
 $configManager = new ConfigManager(__DIR__);
-$configManager->registerProviders($providers);
+$configManager->registerProviders($configFileProviderManager->createDefaultProviders());
+$configManager->registerProviders($routingFileProviderManager->createDefaultProviders());
 
 $config = $configManager->getConfig();
 
