@@ -4,13 +4,7 @@ namespace Zend\Expressive\Config\Provider;
 
 trait ArrayUtilTrait
 {
-    /**
-     * @param array $a
-     * @param array $b
-     *
-     * @return array
-     */
-    public static function merge(array $a, array $b)
+    public static function merge(array $a, array $b) : array
     {
         foreach ($b as $key => $value) {
             if (array_key_exists($key, $a)) {

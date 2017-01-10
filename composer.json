@@ -1,10 +1,12 @@
 {
     "name": "gummmibear/ze-config-manager",
-    "description": "Zend Expressive config manager",
+    "description": "Zend Expressive Config Manager",
     "keywords": [
         "zend",
         "expressive",
-        "config"
+        "config",
+        "YAML",
+        "PHP"
     ],
     "homepage": "https://github.com/gummmibear/",
     "license": "MIT",

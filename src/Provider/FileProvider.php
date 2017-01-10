@@ -9,18 +9,11 @@ abstract class FileProvider implements FileProviderInterface
 {
     private $pattern;
 
-    /**
-     * Provider constructor.
-     * @param $pattern
-     */
     public function __construct($pattern)
     {
         $this->pattern = $pattern;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getConfig() : array
     {
         $config = [];
@@ -33,12 +26,6 @@ abstract class FileProvider implements FileProviderInterface
 
     abstract protected function getConfigFromFile(array $config, \SplFileInfo $file) : array;
 
-
-    /**
-     * @param $pattern
-     *
-     * @return GlobIterator
-     */
     private function iterate($pattern) : GlobIterator
     {
         return new GlobIterator($pattern, FilesystemIterator::SKIP_DOTS);

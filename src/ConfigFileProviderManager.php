@@ -16,9 +16,6 @@ class ConfigFileProviderManager
         ]
     ];
 
-    /**
-     * @param ConfigFileProviderFactory $fileProviderFactory
-     */
     public function __construct(ConfigFileProviderFactory $fileProviderFactory)
     {
         $this->fileProviderFactory = $fileProviderFactory;

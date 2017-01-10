@@ -21,13 +21,7 @@ class ConfigFileProviderFactory
         $this->rootDir = $rootDir;
     }
 
-    /**
-     * @param $provider
-     * @param $pattern
-     *
-     * @return FileProviderInterface
-     */
-    public function getProvider($provider, $pattern) : FileProviderInterface
+    public function getProvider(string $provider, string $pattern) : FileProviderInterface
     {
         $pattern = $this->rootDir . $pattern;
         switch ($provider) {

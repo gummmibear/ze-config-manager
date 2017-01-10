@@ -18,7 +18,7 @@ class ConfigManager
     private $rootDir;
 
     /** @var string */
-    private $cacheFile = null;
+    private $cacheFile = self::DEFAULT_CACHE_FILE;
 
     public function __construct($rootDir)
     {
@@ -28,8 +28,6 @@ class ConfigManager
     public function setCacheFile($cacheFile)
     {
         $this->cacheFile = $cacheFile;
-
-        return $this;
     }
 
     public function registerProviders(array $providers)
@@ -39,9 +37,7 @@ class ConfigManager
 
     public function getConfig() : array
     {
-        $cachedConfig = $this->getCachedConfig();
-
-        if (!empty($cachedConfig)) {
+        if (!empty($cachedConfig = $this->getCachedConfig())) {
             return $cachedConfig;
         }
 
@@ -60,37 +56,27 @@ class ConfigManager
 
     private function cacheConfig(array $config)
     {
-        $cachedConfigFile = $this->getCachedFilePath();
-
         // Cache config if enabled
         if (isset($config['config_cache_enabled']) && $config['config_cache_enabled'] === true) {
+            $cachedConfigFile = $this->getCachedFilePath();
             file_put_contents($cachedConfigFile, '<?php return ' . var_export($config, true) . ';');
         }
     }
 
     private function getCachedConfig() : array
     {
-        $cachedConfigFile = $this->getCachedFilePath();
-
-        if (is_file($cachedConfigFile)) {
+        if (is_file($cachedConfigFile = $this->getCachedFilePath())) {
             return include $cachedConfigFile;
         }
 
         return [];
     }
 
-    /**
-     * @param array $config
-     *
-     * @return array
-     */
     private function resolveVariables(array $config): array
     {
         $parameters = [];
         if (isset($config['parameters'])) {
-            foreach ($config['parameters'] as $key => $value) {
-                $parameters[$key] = $value;
-            }
+            $parameters = $config['parameters'];
         }
 
         array_walk_recursive(
@@ -120,6 +106,6 @@ class ConfigManager
 
     private function getCachedFile() : string
     {
-        return ($this->cacheFile !== null) ? $this->cacheFile : self::DEFAULT_CACHE_FILE;
+        return $this->cacheFile;
     }
 }
