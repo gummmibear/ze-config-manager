@@ -1,5 +1,5 @@
 {
-    "name": "gummmibear/zeConfigManager",
+    "name": "gummmibear/ze-config-manager",
     "description": "Zend Expressive config manager",
     "keywords": [
         "zend",
@@ -16,8 +16,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/gummmibear/zeConfigManager/issues",
-        "source": "https://github.com/gummmibear/zeConfigManager"
+        "issues": "https://github.com/gummmibear/ze-config-manager/issues",
+        "source": "https://github.com/gummmibear/ze-config-manager"
     },
     "require": {
         "php": ">=5.4",
