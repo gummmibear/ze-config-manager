@@ -1,0 +1,14 @@
+doctrine:
+  connection:
+    orm_default:
+      params:
+        url: "mysql://%db_user%:%db_password%@%db_host%/%db_name%"
+  driver:
+    orm_default:
+        class: Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain
+        drivers:
+          App\Entity: my_entity
+    my_entity:
+        class: Doctrine\ORM\Mapping\Driver\AnnotationDriver
+        cache: array
+        paths: /var/www/api/src/App/Entity

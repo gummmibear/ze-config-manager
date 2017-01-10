@@ -2,16 +2,16 @@
 
 namespace Zend\Expressive\Config\Provider;
 
-use Zend\Stdlib\ArrayUtils;
 use SplFileInfo;
 
 class PhpFileProvider extends FileProvider
 {
+    use ArrayUtilTrait;
     /**
      * {@inheritdoc}
      */
-    public function getConfigFromFile(array $config, SplFileInfo $file) : array
+    protected function getConfigFromFile(array $config, SplFileInfo $file) : array
     {
-        return ArrayUtils::merge($config, include  $file->getRealPath());
+        return self::merge($config, include  $file->getRealPath());
     }
 }

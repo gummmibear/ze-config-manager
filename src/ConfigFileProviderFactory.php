@@ -27,7 +27,8 @@ class ConfigFileProviderFactory
      *
      * @return FileProviderInterface
      */
-    public function getProvider($provider, $pattern) : FileProviderInterface {
+    public function getProvider($provider, $pattern) : FileProviderInterface
+    {
         $pattern = $this->rootDir . $pattern;
         switch ($provider) {
             case self::PHP_PROVIDER:

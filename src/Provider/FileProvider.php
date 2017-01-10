@@ -31,6 +31,8 @@ abstract class FileProvider implements FileProviderInterface
         return $config;
     }
 
+    abstract protected function getConfigFromFile(array $config, \SplFileInfo $file) : array;
+
 
     /**
      * @param $pattern

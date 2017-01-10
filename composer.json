@@ -1,12 +1,12 @@
 {
-    "name": "gummmibear/zend-expressive-config",
+    "name": "gummmibear/zeConfigManager",
     "description": "Zend Expressive config manager",
     "keywords": [
         "zend",
         "expressive",
         "config"
     ],
-    "homepage": "https://github.com/gummmibear/zend-expressive-config",
+    "homepage": "https://github.com/gummmibear/",
     "license": "MIT",
     "authors": [
         {
@@ -16,8 +16,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/gummmibear/zend-expressive-config/issues",
-        "source": "https://github.com/gummmibear/zend-expressive-config"
+        "issues": "https://github.com/gummmibear/zeConfigManager/issues",
+        "source": "https://github.com/gummmibear/zeConfigManager"
     },
     "require": {
         "php": ">=5.4",
@@ -36,5 +36,8 @@
         "psr-4": {
             "Zend\\Expressive\\Config\\Test\\": "test"
         }
+    },
+    "scripts": {
+        "test" : "phpunit test/"
     }
 }
