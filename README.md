@@ -1,5 +1,7 @@
 # Zend Expressive Config Manager
 
+   [![Build Status](https://travis-ci.org/gummmibear/ze-config-manager.svg?branch=master)](https://travis-ci.org/gummmibear/ze-config-manager)
+
 Library for config PHP application.
 
 YAML, PHP 
