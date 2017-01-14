@@ -7,13 +7,8 @@ class ConfigFileProviderManager
 {
     /** @var [] */
     private $autoloadFilePattern = [
-        'php' => [
-            '/*.global.php',
-            '/*.local.php'
-        ],
-        'yml' => [
-            '/*.yml'
-        ]
+        'php' => '{{,*.}global,{,*.}local}.php',
+        'yml' => '{{,*.}global,{,*.}local}.yml'
     ];
 
     public function __construct(ConfigFileProviderFactory $fileProviderFactory)
@@ -27,10 +22,8 @@ class ConfigFileProviderManager
     public function createDefaultProviders()
     {
         $providers = [];
-        foreach($this->autoloadFilePattern as $providerKey => $providersPatterns) {
-            foreach ($providersPatterns as $pattern) {
-                $providers[] = $this->fileProviderFactory->getProvider($providerKey, $pattern);
-            }
+        foreach($this->autoloadFilePattern as $providerKey => $pattern) {
+            $providers[] = $this->fileProviderFactory->getProvider($providerKey, $pattern);
         }
 
         return $providers;

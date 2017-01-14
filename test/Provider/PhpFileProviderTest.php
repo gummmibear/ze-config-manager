@@ -12,13 +12,13 @@ class PhpFileProviderTest extends TestCase
 
     public function setUp()
     {
-        $this->sut = new PhpFileProvider(__DIR__ . '/Resources/*.php');
+        $this->sut = new PhpFileProvider(__DIR__ . '/Resources/{{,*.}global,{,*.}local}.php');
     }
 
     public function testGetConfig()
     {
         $expectedConfig = [
-            'debug' => false,
+            'debug' => true,
             'config_cache_enabled' => false,
         ];
 

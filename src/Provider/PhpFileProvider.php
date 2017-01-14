@@ -6,8 +6,8 @@ class PhpFileProvider extends FileProvider
 {
     use ArrayUtilTrait;
 
-    protected function getConfigFromFile(array $config, \SplFileInfo $file) : array
+    protected function getConfigFromFile(array $config, string $file) : array
     {
-        return self::merge($config, include  $file->getRealPath());
+        return self::merge($config, include  $file);
     }
 }

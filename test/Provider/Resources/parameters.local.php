@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'debug' => false,
+    'debug' => true,
     'config_cache_enabled' => false,
 ];

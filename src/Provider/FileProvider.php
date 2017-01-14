@@ -2,8 +2,7 @@
 
 namespace Zend\Expressive\Config\Provider;
 
-use GlobIterator;
-use FilesystemIterator;
+use Zend\Stdlib\Glob;
 
 abstract class FileProvider implements FileProviderInterface
 {
@@ -24,10 +23,10 @@ abstract class FileProvider implements FileProviderInterface
         return $config;
     }
 
-    abstract protected function getConfigFromFile(array $config, \SplFileInfo $file) : array;
+    abstract protected function getConfigFromFile(array $config, string $file) : array;
 
-    private function iterate($pattern) : GlobIterator
+    private function iterate($pattern):array
     {
-        return new GlobIterator($pattern, FilesystemIterator::SKIP_DOTS);
+        return Glob::glob($pattern, Glob::GLOB_BRACE);
     }
 }
