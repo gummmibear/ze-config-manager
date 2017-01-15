@@ -2,12 +2,12 @@
 
 namespace Zend\Expressive\Config\Provider;
 
+use Zend\Stdlib\ArrayUtils;
+
 class PhpFileProvider extends FileProvider
 {
-    use ArrayUtilTrait;
-
     protected function getConfigFromFile(array $config, string $file) : array
     {
-        return self::merge($config, include  $file);
+        return ArrayUtils::merge($config, include  $file);
     }
 }

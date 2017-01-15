@@ -2,13 +2,11 @@
 
 namespace Zend\Expressive\Config;
 
-use Zend\Expressive\Config\Provider\ArrayUtilTrait;
 use Zend\Expressive\Config\Provider\FileProviderInterface;
+use Zend\Stdlib\ArrayUtils;
 
 class ConfigManager
 {
-    use ArrayUtilTrait;
-
     const DEFAULT_CACHE_FILE = '/../data/cache/app_config.php';
 
     /** @var FileProviderInterface[] */
@@ -44,7 +42,7 @@ class ConfigManager
         $config = [];
 
         foreach($this->providers as $fileProvider) {
-            $config = self::merge($config, $fileProvider->getConfig());
+            $config = ArrayUtils::merge($config, $fileProvider->getConfig());
         }
 
         $config = $this->resolveVariables($config);
