@@ -11,7 +11,7 @@ class YamlFileProviderTest extends TestCase
 
     public function setUp()
     {
-        $this->sut = new YamlFileProvider(__DIR__ . '/Resources/*.yml');
+        $this->sut = new YamlFileProvider(__DIR__ . '/Resources/{*,{{,*.}global,{,*.}local}}.yml');
     }
 
     public function testGetConfig_ShouldReturnArray()

@@ -21,7 +21,7 @@ class ConfigManagerTest extends TestCase
         $this->sut = new ConfigManager(vfsStream::url('root'));
     }
 
-    public function testConfigManager()
+    public function testConfigManagerInstance()
     {
         $this->assertInstanceOf(ConfigManager::class, $this->sut);
     }

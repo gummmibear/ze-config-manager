@@ -1,0 +1,6 @@
+parameters:
+  db_user: local
+  db_password: local
+  db_host: localhost
+  db_name: symfony # ;)
+  root_dir: /home/gbear/projects/ze-config-manager

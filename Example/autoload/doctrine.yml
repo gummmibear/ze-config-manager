@@ -11,4 +11,4 @@ doctrine:
     my_entity:
         class: Doctrine\ORM\Mapping\Driver\AnnotationDriver
         cache: array
-        paths: /var/www/api/src/App/Entity
+        paths: %root_dir%/src/App/Entity

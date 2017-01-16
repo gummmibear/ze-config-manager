@@ -19,7 +19,7 @@ class ConfigFileProviderFactoryTest extends TestCase
     /**
      * @dataProvider dpProvider
      */
-    public function testGetProvider_ShouldReturnFileProvider($providerName, $expectedProvider)
+    public function testGetProvider_ShouldReturnFileProvider(string $providerName, string $expectedProvider)
     {
         $this->assertInstanceOf($expectedProvider, $this->sut->getProvider($providerName, 'pattern'));
     }

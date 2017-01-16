@@ -8,7 +8,7 @@ class ConfigFileProviderManager
     /** @var [] */
     private $autoloadFilePattern = [
         'php' => '{{,*.}global,{,*.}local}.php',
-        'yml' => '{{,*.}global,{,*.}local}.yml'
+        'yml' => '{*,{{,*.}global,{,*.}local}}.yml'
     ];
 
     public function __construct(ConfigFileProviderFactory $fileProviderFactory)

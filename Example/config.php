@@ -1,6 +1,6 @@
 <?php
 
-require '../../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use Zend\Expressive\Config\ConfigManager;
 use Zend\Expressive\Config\ConfigFileProviderFactory;
