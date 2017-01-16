@@ -16,7 +16,7 @@ The preferred way to install this extension is through [Composer](http://getcomp
 Either run
 
 ```
-"composer require gummmibear/ze-config-manager"
+composer require gummmibear/ze-config-manager dev-master
 ```
 
 or add
